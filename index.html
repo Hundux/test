@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <style>
+        .registerForm {
+            margin-left: 520px;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <form class="registerForm">
+    <input id="name" type="text" placeholder="用户名"><br/>
+    <input id="password" type="password" placeholder="密码"><br/>
+    <input id="registerSubmit" type="submit" value="注册"><br/>
+</form>
+</body>
+<script src="js/jquery-1.11.0.js"></script>
+<script>
+    $("#registerSubmit").click(function() {
+        $.ajax({
+            type: "post",
+            url:"register.php",
+            data: {
+                name: $("#name").val(),
+                password: $("#password").val()
+            },
+            success(res) {
+                console.log(res);
+            }
+        })
+        return false
+    })
+</script>
+</html>

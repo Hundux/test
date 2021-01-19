@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //我尝试了下我面试里回答的办法，必须要每次遍历都改变其他几个数的下标，而且还要先扩张数组再删掉原数组里面的数，很麻烦。然后想到如果我要把第一个数变成最后一个数，那不如同时把最后一个数变成第一个数，也就是做替换，所以我写了这个办法。
+    var array = [1, 5, 8, 9, 10]
+    var lg = array.length
+    // 通过math.floor(lg / 2)，可以确保每个数都能做到替换
+    for (n = 0; n < Math.floor(lg / 2); n++) {
+        a = array[n]
+        array[n] = array[lg - 1 - n]
+        array[lg - 1 - n] = a
+    }
+    console.log(array)
+</script>
+
+</html>
